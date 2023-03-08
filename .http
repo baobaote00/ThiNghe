@@ -1,0 +1,151 @@
+// Insert 1 Asset mới vào bảng Assets
+POST http://localhost:3000/AddAsset
+Content-Type: application/json
+
+{
+  "AssetSN": "05/04/0001",
+  "AssetName": "Toyota Hilux FAF321",
+  "DepartmentLocationID": 3,
+  "EmployeeID": 5,
+  "AssetGroupID": 4,
+  "Description": "test",
+  "WarrantyDate": null
+}
+
+### Lấy danh sách các Assets từ bảng Assets
+GET http://localhost:3000/GetAssets
+Content-Type: application/json
+
+### Lấy danh sách các Assets Group từ bảng Asset Group
+GET http://localhost:3000/GetAssetGroups
+Content-Type: application/json
+
+### Lấy danh sách các Location từ bảng Location
+GET http://localhost:3000/GetLocations
+Content-Type: application/json
+
+### Update Asset 
+PUT http://localhost:3000/UpdateAsset HTTP/1.1
+Content-Type: application/json
+
+{
+    "ID": 1,
+    "AssetSN": "05/04/0004",
+    "AssetName": "Toyota Hilux FAF321",
+    "DepartmentLocationID": 3,
+    "EmployeeID": 5,
+    "AssetGroupID": 4,
+    "Description": "",
+    "WarrantyDate": "2022/12/31 23:59:59"
+}
+
+### Lấy danh sách các photo từ bảng AssetPhotos (Image)
+GET http://localhost:3000/GetAssetPhotos/2
+Content-Type: application/json
+
+### Insert 1 ảnh mới vào bảng AssetPhotos(Image)
+post http://localhost:3000/AddAssetPhoto
+Content-Type: application/json
+
+{
+  "AssetID": 1,
+  "AssetPhoto": "< ./Screenshot_20221125_090919.png"
+}
+
+### Update 1 ảnh mới vào bảng AssetPhotos(Image)
+PUT http://localhost:3000/UpdateAssetPhoto HTTP/1.1
+Content-Type: application/json
+
+{
+    "ID": 1,
+    "AssetID": 2,
+    "AssetPhoto": "test"
+}
+
+// Lấy danh sách AssetTransferLogs từ bảng AssetTransferLogs
+### 
+GET http://localhost:3000/GetAssetTransferLogs
+Content-Type: application/json
+
+//Insert 1  AssetTransferLogs mới vào bảng AssetTransferLogs
+### 
+post http://localhost:3000/AddTransferLog
+Content-Type: application/json
+
+{
+  "AssetID": 1,
+  "TransferDate": "2012-01-08T17:00:00.000Z",
+  "FromAssetSN": "04/04/0002",
+  "ToAssetSN": "05/04/0001",
+  "FromDepartmentLocationID": 7,
+  "ToDepartmentLocationID": 4
+}
+
+// Lấy danh sách các DepartmentLocations từ bảng DepartmentLocations
+### 
+GET http://localhost:3000/GetDepartmentLocations
+Content-Type: application/json
+
+// Lấy danh sách các Department từ bảng Departments
+### 
+GET http://localhost:3000/GetDepartments
+Content-Type: application/json
+
+// Lấy danh sách các Employee  từ bảng Employees
+### 
+GET http://localhost:3000/GetEmployees
+Content-Type: application/json
+
+// Lấy danh sách các AssetOdometer  từ bảng AssetOdometers
+### 
+GET http://localhost:3000/GetAssetOdometers
+Content-Type: application/json
+
+// Lấy danh sách các PMTask từ bảng PMTasks
+### 
+GET http://localhost:3000/GetPMTasks
+Content-Type: application/json
+
+// Insert 1 PMTask mới vào bảng PMTasks
+### 
+post http://localhost:3000/AddPMTask
+Content-Type: application/json
+
+{
+  "AssetID": 1,
+  "TaskID": 1,
+  "PMScheduleTypeID": 1,
+  "ScheduleDate": null,
+  "ScheduleKilometer": 5000,
+  "TaskDone": 1
+}
+
+// Update PMTask 
+###
+PUT http://localhost:3000/UpdatePMTask HTTP/1.1
+Content-Type: application/json
+
+{
+  "ID": 1,
+  "AssetID": 1,
+  "TaskID": 1,
+  "PMScheduleTypeID": 1,
+  "ScheduleDate": null,
+  "ScheduleKilometer": 5060,
+  "TaskDone": 1
+}
+
+// Lấy danh sách các Task  từ bảng Tasks
+### 
+GET http://localhost:3000/GetTasks
+Content-Type: application/json
+
+// Lấy danh sách các PMScheduleType  từ bảng PMScheduleTypes
+### 
+GET http://localhost:3000/GetPMScheduleTypes
+Content-Type: application/json
+
+// Lấy danh sách các PMScheduleModel  từ bảng PMScheduleModels
+### 
+GET http://localhost:3000/GetPMScheduleModels
+Content-Type: application/json
